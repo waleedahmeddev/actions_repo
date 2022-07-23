@@ -11,6 +11,9 @@ jobs:
     # - name: Checkout repository
     #   uses: actions/checkout@v3
 
+    - name: sleep
+      run: sleep 10
+
     - name: run echo just with test
       run: echo Test
 
