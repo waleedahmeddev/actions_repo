@@ -1,0 +1,26 @@
+name: "My Actions Job"
+
+on: [push]
+
+jobs:
+  do_random_stuff:
+    name: Test
+    runs-on: ubuntu-latest
+    
+    steps:
+    # - name: Checkout repository
+    #   uses: actions/checkout@v3
+
+    - name: run echo just with test
+      run: echo Test
+
+    - name: curl ip of the machine
+      run: curl -s ifconfig.me
+
+    - name: test file
+      run: echo 'test' > test.txt
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: test.txt
