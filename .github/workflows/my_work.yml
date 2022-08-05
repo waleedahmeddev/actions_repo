@@ -13,7 +13,7 @@ jobs:
     #   uses: actions/checkout@v3
 
     - name: sleep
-      run: sleep 30
+      run: sleep 1
 
     - name: run echo just with test
       run: echo Test
