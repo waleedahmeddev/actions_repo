@@ -5,15 +5,15 @@ on: [push]
 jobs:
   do_random_stuff:
     name: Test
-    #runs-on: ['self-hosted']
-    runs-on: ubuntu-latest
+    runs-on: ['self-hosted']
+    #runs-on: ubuntu-latest
     
     steps:
     # - name: Checkout repository
     #   uses: actions/checkout@v3
 
     - name: sleep
-      run: sleep 1
+      run: sleep 30
 
     - name: run echo just with test
       run: echo Test
