@@ -27,7 +27,7 @@ jobs:
         service_account_key: ${{ secrets.TEST_SVC }}
 
     - name: test
-      run: gcloud config list
+      run: gcloud logging read --project toptal-ci 'resource.labels.namespace_name=~"github-features-business-tests-61845-1" AND resource.type="k8s_container" AND resource.labels.cluster_name="testbox-1" AND textPayload=~("Using the last argument as keyword parameters is deprecated" OR "Passing the keyword argument as the last hash parameter is deprecated" OR "Splitting the last argument into positional and keyword parameters is deprecated" OR "Capturing the given block using Proc.new is deprecated")'
 
     # - name: test file
     #   run: echo 'test' > test.txt
