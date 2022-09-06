@@ -5,21 +5,29 @@ on: [push]
 jobs:
   do_random_stuff:
     name: Test
-    runs-on: ['self-hosted']
-    #runs-on: ubuntu-latest
+    #runs-on: ['self-hosted']
+    runs-on: ubuntu-latest
     
     steps:
     # - name: Checkout repository
     #   uses: actions/checkout@v3
 
-    - name: sleep
-      run: sleep 10
+    # - name: sleep
+    #   run: sleep 10
 
-    - name: run echo just with test
-      run: echo Test
+    # - name: run echo just with test
+    #   run: echo Test
 
-    - name: curl ip of the machine
-      run: curl -s ifconfig.me
+    # - name: curl ip of the machine
+    #   run: curl -s ifconfig.me
+
+    - name: test gcloud
+      uses: google-github-actions/setup-gcloud@v0.2.1
+      with:
+        service_account_key: ${{ secrets.TEST_SVC }}
+
+    - name: test
+      run: gcloud config list
 
     # - name: test file
     #   run: echo 'test' > test.txt
