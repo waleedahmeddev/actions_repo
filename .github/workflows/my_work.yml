@@ -10,15 +10,15 @@ jobs:
     
     steps:
 
-    - name: Debug github event
-      run: |
-        echo '${{ toJSON(github) }}'
+    # - name: Debug github event
+    #   run: |
+    #     echo '${{ toJSON(github) }}'
 
     # - name: Checkout repository
     #   uses: actions/checkout@v3
 
-    # - name: sleep
-    #   run: sleep 10
+    - name: sleep
+      run: sleep 1
 
     # - name: run echo just with test
     #   run: echo Test
