@@ -2,6 +2,9 @@ name: "My Actions Job"
 
 on: [push]
 
+env:
+  LANG: C.UTF-8
+  
 jobs:
   do_random_stuff:
     name: Test
@@ -10,9 +13,9 @@ jobs:
     
     steps:
 
-    # - name: Debug github event
-    #   run: |
-    #     echo '${{ toJSON(github) }}'
+    - name: Debug github event
+      run: |
+        echo '${{ toJSON(github) }}'
 
     # - name: Checkout repository
     #   uses: actions/checkout@v3
