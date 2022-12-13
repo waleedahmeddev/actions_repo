@@ -1,6 +1,6 @@
 name: "My Actions Job"
 
-on: [push]
+on: [fork]
 
 env:
   LANG: C.UTF-8
