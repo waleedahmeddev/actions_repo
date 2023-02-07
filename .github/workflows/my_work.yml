@@ -1,10 +1,7 @@
 name: "My Actions Job"
 
-on: [fork]
+on: [push]
 
-env:
-  LANG: C.UTF-8
-  
 jobs:
   do_random_stuff:
     name: Test
@@ -12,32 +9,17 @@ jobs:
     #runs-on: ubuntu-latest
     
     steps:
-
-    # - name: Debug github event
-    #   run: |
-    #     echo '${{ toJSON(github) }}'
-
     # - name: Checkout repository
     #   uses: actions/checkout@v3
 
     - name: sleep
-      run: sleep 1
-    
-    - run: echo all is good
+      run: sleep 5
 
-    # - name: run echo just with test
-    #   run: echo Test
+    - name: run echo just with test
+      run: echo Test
 
-    # - name: curl ip of the machine
-    #   run: curl -s ifconfig.me
-
-    # - name: test gcloud
-    #   uses: google-github-actions/setup-gcloud@v0.2.1
-    #   with:
-    #     service_account_key: ${{ secrets.TEST_SVC }}
-
-    # - name: test
-    #   run: gcloud logging read 'resource.labels.namespace_name=~"github-features-business-tests-61845-1" AND resource.type="k8s_container" AND resource.labels.cluster_name="testbox-1" AND textPayload=~("Using the last argument as keyword parameters is deprecated" OR "Passing the keyword argument as the last hash parameter is deprecated" OR "Splitting the last argument into positional and keyword parameters is deprecated" OR "Capturing the given block using Proc.new is deprecated")'
+    - name: curl ip of the machine
+      run: curl -s ifconfig.me
 
     # - name: test file
     #   run: echo 'test' > test.txt
