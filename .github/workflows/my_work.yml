@@ -1,0 +1,27 @@
+# name: "My Actions Job"
+
+on: [fork]
+
+env:
+  LANG: C.UTF-8
+  
+jobs:
+  do_random_stuff:
+    name: Test
+    runs-on: ['self-hosted']
+    #runs-on: ubuntu-latest
+    
+    steps:
+
+    # - name: Debug github event
+    #   run: |
+    #     echo '${{ toJSON(github) }}'
+
+    # - name: Checkout repository
+    #   uses: actions/checkout@v3
+
+    - name: sleep
+      run: sleep 1
+    
+    - run: echo all is good
+
